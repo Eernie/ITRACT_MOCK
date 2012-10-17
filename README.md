@@ -3,7 +3,7 @@ ITRACT_MOCK
 
 Mocking server
 
-usage:
+Usage:
 -----------
 
     Python mock.py
