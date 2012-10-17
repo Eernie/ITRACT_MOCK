@@ -1,0 +1,4 @@
+{
+	"user_id" : "<int::user_id>",
+	"user_name" : "<string::user_name>"
+}

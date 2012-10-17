@@ -1,0 +1,16 @@
+{
+	"offer_id" : "<int::trip_offer_id>",
+	"offer_profile" : "<int::profile_id>",
+	"offer_origin_long" : "<double::longitude>",
+	"offer_origin_lat" : "<double::latitude>",
+	"offer_origin_window": "<int::window_in_meters>",
+	"offer_destination_long" : "<double::longitude>",
+	"offer_destination_lat" : "<double::latitude>",
+	"offer_destination_window": "<int::window_in_meters>",
+	"offer_start_time_min" : "<long::unix_time>",
+	"offer_start_time_max" : "<long::unix_time>",
+	"offer_end_time_min" : "<long::unix_time>",
+	"offer_end_time_max" : "<long::unix_time>",
+	"offer_numberOfSeats" : "<int::number_of_seats>",
+	"offer_state" : "<string::state>"
+}
