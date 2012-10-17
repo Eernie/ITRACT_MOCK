@@ -6,17 +6,23 @@ app = Flask(__name__)
 app.debug = True 
 
 
-@app.route("/tripOffer", methods=['GET'])
-def tripOfferGet():
-	return dumpJsonFile('get_tripOffers.json')
-
 @app.route("/tripOffer", methods=['POST'])
 def tripOfferPost():
 	return dumpJsonFile('get_userById.json')
 
+@app.route("/tripOffer", methods=['GET'])
 @app.route("/tripOffer/<tripOfferId>", methods=['GET'])
-def tripOfferGetvar(tripOfferId):
+def tripOfferGetvar(tripOfferId=0):
+	if tripOfferId == 0:
+		return dumpJsonFile('get_tripOffers.json')
+
 	return dumpJsonFile('get_tripOfferById.json')
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+	content = {"status": "error","message":"This is a wrong request or the request isn't created yet"}
+	return json.dumps(content)
 
 
 def dumpJsonFile(filename):
