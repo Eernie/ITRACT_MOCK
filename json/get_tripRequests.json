@@ -1,0 +1,36 @@
+{
+	"tripRequests" : [
+		{
+			"request_id" : "<int::trip_request_id>",
+			"request_profile" : "<int::profile_id>",
+			"request_origin_long" : "<double::longitude>",
+			"request_origin_lat" : "<double::latitude>",
+			"request_origin_window": "<int::window>",
+			"request_destination_long" : "<double::longitude>",
+			"request_destination_lat" : "<double::latitude>",
+			"request_destination_window": "<int::window>",
+			"request_start_time_min" : "<long::unix_time>",
+			"request_start_time_max" : "<long::unix_time>",
+			"request_end_time_min" : "<long::unix_time>",
+			"request_end_time_max" : "<long::unix_time>",
+			"request_numberOfSeats" : "<int::number_of_seats>",
+			"request_state" : "<string::state>"
+		},
+		{
+			"request_id" : "<int::trip_request_id>",
+			"request_profile" : "<int::profile_id>",
+			"request_origin_long" : "<double::longitude>",
+			"request_origin_lat" : "<double::latitude>",
+			"request_origin_window": "<int::window>",
+			"request_destination_long" : "<double::longitude>",
+			"request_destination_lat" : "<double::latitude>",
+			"request_destination_window": "<int::window>",
+			"request_start_time_min" : "<long::unix_time>",
+			"request_start_time_max" : "<long::unix_time>",
+			"request_end_time_min" : "<long::unix_time>",
+			"request_end_time_max" : "<long::unix_time>",
+			"request_numberOfSeats" : "<int::number_of_seats>",
+			"request_state" : "<string::state>"
+		}
+	]
+}

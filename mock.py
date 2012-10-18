@@ -1,3 +1,4 @@
+import flask 
 from flask import Flask
 import json
 import pprint
@@ -11,12 +12,19 @@ def tripOfferPost():
 	return dumpJsonFile('get_userById.json')
 
 @app.route("/tripOffer", methods=['GET'])
-@app.route("/tripOffer/<tripOfferId>", methods=['GET'])
+@app.route("/tripOffer/<tripOfferId>", methods=['GET','PUT'])
 def tripOfferGetvar(tripOfferId=0):
 	if tripOfferId == 0:
 		return dumpJsonFile('get_tripOffers.json')
 
+
 	return dumpJsonFile('get_tripOfferById.json')
+
+@app.route("/tripRequest")
+def tripRequest():
+	return dumpJsonFIle('get_tripRequest.json')
+
+
 
 
 @app.errorhandler(404)
