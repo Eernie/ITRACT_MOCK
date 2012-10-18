@@ -1,5 +1,5 @@
 import flask 
-from flask import Flask
+from flask import Flask, request
 import json
 import pprint
 
@@ -7,23 +7,45 @@ app = Flask(__name__)
 app.debug = True 
 
 
+def controleValidAttributes(formAttributes):
+	for attribute in formAttributes
+		if not request.args.get(attribute):
+			return False
+	return True
+
+
 @app.route("/tripOffer", methods=['POST'])
 def tripOfferPost():
+	formAttributes = {'name','number'}
+	if request.method == 'PUT':
+		if not controleValidAttributes(formAttributes):
+			return abort(400) 
 	return dumpJsonFile('get_userById.json')
 
 
 @app.route("/tripOffer", methods=['GET'])
 @app.route("/tripOffer/<int:tripOfferId>", methods=['GET','PUT'])
 def tripOfferGet(tripOfferId=0):
+	
 	if tripOfferId == 0:
 		return dumpJsonFile('get_tripOffers.json')
-
+	formAttributes = {'name','number'}
+	if request.method == 'PUT':
+		if not controleValidAttributes(formAttributes):
+			return abort(400) 
 	return dumpJsonFile('get_tripOfferById.json')
+
 
 
 @app.route("/tripRequest", methods=['POST'])
 def tripRequestPost():
+	formAttributes = {'name','number'}
+	if request.method == 'PUT':
+		if not controleValidAttributes(formAttributes):
+			return abort(400)
 	return dumpJsonFIle('get_tripRequestById.json')
+
+
 
 
 @app.route("/tripRequest", methods=['GET'])
@@ -31,17 +53,28 @@ def tripRequestPost():
 def tripRequestGet(tripRequestId=0):
 	if tripRequestId == 0:
 		return dumpJsonFile('get_tripRequests.json')
-
+	formAttributes = {'name','number'}
+	if request.method == 'PUT':
+		if not controleValidAttributes(formAttributes):
+			return abort(400)
 	return dumpJsonFile('get_tripRequestById.json')
 
 
 @app.route("/match/<int:matchId>", methods=['GET','PUT'])
 def matchGet(matchId):
+	formAttributes = {'name','number'}
+	if request.method == 'PUT':
+		if not controleValidAttributes(formAttributes):
+			return abort(400)
 	return dumpJsonFile('get_match.json')
 
 
 @app.route("/user", methods=['POST'])
 def userPost():
+	formAttributes = {'name','number'}
+	if request.method == 'PUT':
+		if not controleValidAttributes(formAttributes):
+			return abort(400)
 	return dumpJsonFile('get_userById.json')
 
 
@@ -50,7 +83,10 @@ def userPost():
 def userGet(userId=0):
 	if userId == 0:
 		return dumpJsonFile('get_users.json')
-
+	formAttributes = {'name','number'}
+	if request.method == 'PUT':
+		if not controleValidAttributes(formAttributes):
+			return abort(400)
 	return dumpJsonFile('get_userById.json')
 
 
