@@ -1,0 +1,58 @@
+{
+	"tripRequest" : 
+	{
+		"request_id" : 1,
+		"request_user" : "<int::user_id>",
+		"request_origin_long" : "<double::longitude>",
+		"request_origin_lat" : "<double::latitude>",
+		"request_origin_window": "<int::window_in_meters>",
+		"request_destination_long" : "<double::longitude>",
+		"request_destination_lat" : "<double::latitude>",
+		"request_destination_window": "<int::window_in_meters>",
+		"request_start_time_min" : "<long::unix_time>",
+		"request_start_time_max" : "<long::unix_time>",
+		"request_end_time_min" : "<long::unix_time>",
+		"request_end_time_max" : "<long::unix_time>",
+		"request_numberOfSeats" : "<int::number_of_seats>",
+		"request_state" : "<string::state>"	
+	},
+	
+	"tripMatches" : [
+		{
+			"match_id" : 2,
+			"offer_id" : "<int::trip_offer_id>",
+			"offer_user" : "<int::user_id>",
+			"offer_origin_long" : "<double::longitude>",
+			"offer_origin_lat" : "<double::latitude>",
+			"offer_origin_window": "<int::window>",
+			"offer_destination_long" : "<double::longitude>",
+			"offer_destination_lat" : "<double::latitude>",
+			"offer_destination_window": "<int::window>",
+			"offer_start_time_min" : "<long::unix_time>",
+			"offer_start_time_max" : "<long::unix_time>",
+			"offer_end_time_min" : "<long::unix_time>",
+			"offer_end_time_max" : "<long::unix_time>",
+			"offer_numberOfSeats" : "<int::number_of_seats>",
+			"offer_state" : "<string::state>",
+			"match_state" : "<string::state>"
+		},
+		{
+			"match_id" : 3,
+			"offer_id" : "<int::request_id>",
+			"offer_user" : "<int::user_id>",
+			"offer_origin_long" : "<double::longitude>",
+			"offer_origin_lat" : "<double::latitude>",
+			"offer_origin_window": "<int::window>",
+			"offer_destination_long" : "<double::longitude>",
+			"offer_destination_lat" : "<double::latitude>",
+			"offer_destination_window": "<int::window>",
+			"offer_start_time_min" : "<long::unix_time>",
+			"offer_start_time_max" : "<long::unix_time>",
+			"offer_end_time_min" : "<long::unix_time>",
+			"offer_end_time_max" : "<long::unix_time>",
+			"offer_numberOfSeats" : "<int::number_of_seats>",
+			"offer_state" : "<string::state>",
+			"match_state" : "<string::state>"
+		}
+	]
+}

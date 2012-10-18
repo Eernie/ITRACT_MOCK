@@ -1,0 +1,12 @@
+{
+	"users" : [
+		{
+			"user_id" : 1,
+			"user_name" : "<string::user_name>"
+		},
+		{
+			"user_id" : 2,
+			"user_name" : "<string::user_name>"
+		}
+	]
+}

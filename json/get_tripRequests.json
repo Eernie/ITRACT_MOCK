@@ -1,7 +1,7 @@
 {
 	"tripRequests" : [
 		{
-			"request_id" : "<int::trip_request_id>",
+			"request_id" : 1,
 			"request_profile" : "<int::profile_id>",
 			"request_origin_long" : "<double::longitude>",
 			"request_origin_lat" : "<double::latitude>",
@@ -17,7 +17,7 @@
 			"request_state" : "<string::state>"
 		},
 		{
-			"request_id" : "<int::trip_request_id>",
+			"request_id" : 2,
 			"request_profile" : "<int::profile_id>",
 			"request_origin_long" : "<double::longitude>",
 			"request_origin_lat" : "<double::latitude>",
