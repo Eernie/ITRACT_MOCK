@@ -16,7 +16,9 @@ def controleValidAttributes(formAttributes):
 
 @app.route("/tripOffer", methods=['POST'])
 def tripOfferPost():
-	formAttributes = {'name','number'}
+	formAttributes = {'user','origin_long', 'origin_lat', 
+					'origin_window', 'destination_long', 'destination_lat', 'destination_window', 
+					'start_time_min', 'start_time_max', 'end_time_min', 'end_time_max', 'numberOfSeats'}
 	if request.method == 'PUT':
 		if not controleValidAttributes(formAttributes):
 			return abort(400) 
@@ -26,10 +28,12 @@ def tripOfferPost():
 @app.route("/tripOffer", methods=['GET'])
 @app.route("/tripOffer/<int:tripOfferId>", methods=['GET','PUT'])
 def tripOfferGet(tripOfferId=0):
-	
 	if tripOfferId == 0:
 		return dumpJsonFile('get_tripOffers.json')
-	formAttributes = {'name','number'}
+
+	formAttributes = {'origin_long','origin_lat','origin_window','destination_long','destination_lat',
+										'destination_window','start_time_min','start_time_max','end_time_min','end_time_max',
+										'numberOfSeats'}
 	if request.method == 'PUT':
 		if not controleValidAttributes(formAttributes):
 			return abort(400) 
@@ -39,7 +43,9 @@ def tripOfferGet(tripOfferId=0):
 
 @app.route("/tripRequest", methods=['POST'])
 def tripRequestPost():
-	formAttributes = {'name','number'}
+	formAttributes = {'user','origin_long','origin_lat','origin_window','destination_long',
+										'destination_lat','destination_window','start_time_min','start_time_max',
+										'end_time_min','end_time_max','numberOfSeats'}
 	if request.method == 'PUT':
 		if not controleValidAttributes(formAttributes):
 			return abort(400)
@@ -53,7 +59,9 @@ def tripRequestPost():
 def tripRequestGet(tripRequestId=0):
 	if tripRequestId == 0:
 		return dumpJsonFile('get_tripRequests.json')
-	formAttributes = {'name','number'}
+	formAttributes = {'origin_long','origin_lat','origin_window','destination_long','destination_lat',
+										'destination_window','start_time_min','start_time_max','end_time_min','end_time_max',
+										'numberOfSeats'}
 	if request.method == 'PUT':
 		if not controleValidAttributes(formAttributes):
 			return abort(400)
@@ -62,7 +70,7 @@ def tripRequestGet(tripRequestId=0):
 
 @app.route("/match/<int:matchId>", methods=['GET','PUT'])
 def matchGet(matchId):
-	formAttributes = {'name','number'}
+	formAttributes = {'confirm','rating'}
 	if request.method == 'PUT':
 		if not controleValidAttributes(formAttributes):
 			return abort(400)
@@ -71,7 +79,7 @@ def matchGet(matchId):
 
 @app.route("/user", methods=['POST'])
 def userPost():
-	formAttributes = {'name','number'}
+	formAttributes = {'name'}
 	if request.method == 'PUT':
 		if not controleValidAttributes(formAttributes):
 			return abort(400)
@@ -83,7 +91,7 @@ def userPost():
 def userGet(userId=0):
 	if userId == 0:
 		return dumpJsonFile('get_users.json')
-	formAttributes = {'name','number'}
+	formAttributes = {'name'}
 	if request.method == 'PUT':
 		if not controleValidAttributes(formAttributes):
 			return abort(400)
