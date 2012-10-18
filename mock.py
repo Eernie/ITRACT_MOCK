@@ -11,20 +11,47 @@ app.debug = True
 def tripOfferPost():
 	return dumpJsonFile('get_userById.json')
 
+
 @app.route("/tripOffer", methods=['GET'])
-@app.route("/tripOffer/<tripOfferId>", methods=['GET','PUT'])
-def tripOfferGetvar(tripOfferId=0):
+@app.route("/tripOffer/<int:tripOfferId>", methods=['GET','PUT'])
+def tripOfferGet(tripOfferId=0):
 	if tripOfferId == 0:
 		return dumpJsonFile('get_tripOffers.json')
 
-
 	return dumpJsonFile('get_tripOfferById.json')
 
-@app.route("/tripRequest")
-def tripRequest():
-	return dumpJsonFIle('get_tripRequest.json')
+
+@app.route("/tripRequest", methods=['POST'])
+def tripRequestPost():
+	return dumpJsonFIle('get_tripRequestById.json')
 
 
+@app.route("/tripRequest", methods=['GET'])
+@app.route("/tripRequest/<int:tripRequestId>", methods=['GET','PUT'])
+def tripRequestGet(tripRequestId=0):
+	if tripRequestId == 0:
+		return dumpJsonFile('get_tripRequests.json')
+
+	return dumpJsonFile('get_tripRequestById.json')
+
+
+@app.route("/match/<int:matchId>", methods=['GET','PUT'])
+def matchGet(matchId):
+	return dumpJsonFile('get_match.json')
+
+
+@app.route("/user", methods=['POST'])
+def userPost():
+	return dumpJsonFile('get_userById.json')
+
+
+@app.route("/user", methods=['GET'])
+@app.route("/user/<int:tripOfferId>", methods=['GET','PUT'])
+def userGet(tripOfferId=0):
+	if userId == 0:
+		return dumpJsonFile('get_users.json')
+
+	return dumpJsonFile('get_userById.json')
 
 
 @app.errorhandler(404)
