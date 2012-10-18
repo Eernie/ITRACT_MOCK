@@ -46,17 +46,19 @@ def userPost():
 
 
 @app.route("/user", methods=['GET'])
-@app.route("/user/<int:tripOfferId>", methods=['GET','PUT'])
-def userGet(tripOfferId=0):
+@app.route("/user/<int:userId>", methods=['GET','PUT'])
+def userGet(userId=0):
 	if userId == 0:
 		return dumpJsonFile('get_users.json')
 
 	return dumpJsonFile('get_userById.json')
 
 
+
 @app.errorhandler(404)
+@app.errorhandler(405)
 def page_not_found(error):
-	content = {"status": "error","message":"This is a wrong request or the request isn't created yet"}
+	content = {"status": "error","message":"This is a wrong request or the request isn't created (yet)"}
 	return json.dumps(content)
 
 
