@@ -29,9 +29,7 @@ def tripOfferGet(tripOfferId=0):
 	if tripOfferId == 0:
 		return dumpJsonFile('get_tripOffers.json')
 
-	formAttributes = {'origin_long','origin_lat','origin_window','destination_long','destination_lat',
-										'destination_window','start_time_min','start_time_max','end_time_min','end_time_max',
-										'numberOfSeats'}
+	formAttributes = {'destination_long','destination_lat','numberOfSeats'}
 	if request.method == 'PUT':
 		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_tripOfferById.json')
