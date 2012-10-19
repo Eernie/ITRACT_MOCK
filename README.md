@@ -6,9 +6,11 @@ Mocking server
 Usage:
 -----------
 		
-		1.
-    Python mock.py
+Server mock:
+		
+	Python mock.py
 
-    2.
-    Python src/request.py <host:port>
-    Pick a number, press enter and the request is done.
+Request mock:
+
+	Python src/request.py <host:port>
+	Pick a number, press enter and the request is done.
