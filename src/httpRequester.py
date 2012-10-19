@@ -7,14 +7,14 @@ class httpRequester:
 	def __init__(self, url="localhost"):
 		self.url = url
 		self.commands = []
-		self.addCommand('tripOffer','GET','')
-		self.addCommand('tripOffer','POST', data='user=1&origin_long=-77.037852&origin_lat=38.898556&origin_window=500&destination_long=-78.037852&destination_lat=39.898556&destination_window=500&start_time_min=1350478871&start_time_max=1350478872&end_time_min=1350478873&end_time_max=1350478874&numberOfSeats=1')
-		self.addCommand('tripOffer','GET','/1')
-		self.addCommand('tripOffer','PUT','/1', 'destination_long=-70&destination_lat=38&numberOfSeats=4')
-		self.addCommand('tripRequest','GET')
-		self.addCommand('tripRequest','POST',data='user=1&origin_long=-77.037852&origin_lat=38.898556&origin_window=500&destination_long=-78.037852&destination_lat=39.898556&destination_window=500&start_time_min=1350478871&start_time_max=1350478872&end_time_min=1350478873&end_time_max=1350478874&numberOfSeats=1')
-		self.addCommand('tripRequest','GET','/1')
-		self.addCommand('tripRequest','PUT','/1','destination_long=-80&destination_lat=31&numberOfSeats=1')
+		self.addCommand('trip_offer','GET','')
+		self.addCommand('trip_offer','POST', data='user=1&origin_long=-77.037852&origin_lat=38.898556&origin_window=500&destination_long=-78.037852&destination_lat=39.898556&destination_window=500&start_time_min=1350478871&start_time_max=1350478872&end_time_min=1350478873&end_time_max=1350478874&numberOfSeats=1')
+		self.addCommand('trip_offer','GET','/1')
+		self.addCommand('trip_offer','PUT','/1', 'destination_long=-70&destination_lat=38&numberOfSeats=4')
+		self.addCommand('trip_request','GET')
+		self.addCommand('trip_request','POST',data='user=1&origin_long=-77.037852&origin_lat=38.898556&origin_window=500&destination_long=-78.037852&destination_lat=39.898556&destination_window=500&start_time_min=1350478871&start_time_max=1350478872&end_time_min=1350478873&end_time_max=1350478874&numberOfSeats=1')
+		self.addCommand('trip_request','GET','/1')
+		self.addCommand('trip_request','PUT','/1','destination_long=-80&destination_lat=31&numberOfSeats=1')
 		self.addCommand('match','GET','/1')
 		self.addCommand('match','PUT','/1', 'confirm=true&rating=8')
 		self.addCommand('user','GET')

@@ -13,7 +13,7 @@ def controleValidAttributes(formAttributes):
 			return abort(400)
 
 
-@app.route("/tripOffer", methods=['POST'])
+@app.route("/trip_offer", methods=['POST'])
 def tripOfferPost():
 	formAttributes = {'user','origin_long', 'origin_lat', 
 					'origin_window', 'destination_long', 'destination_lat', 'destination_window', 
@@ -23,8 +23,8 @@ def tripOfferPost():
 	return dumpJsonFile('get_userById.json')
 
 
-@app.route("/tripOffer", methods=['GET'])
-@app.route("/tripOffer/<int:tripOfferId>", methods=['GET','PUT'])
+@app.route("/trip_offer", methods=['GET'])
+@app.route("/trip_offer/<int:tripOfferId>", methods=['GET','PUT'])
 def tripOfferGet(tripOfferId=0):
 	if tripOfferId == 0:
 		return dumpJsonFile('get_tripOffers.json')
@@ -36,7 +36,7 @@ def tripOfferGet(tripOfferId=0):
 
 
 
-@app.route("/tripRequest", methods=['POST'])
+@app.route("/trip_request", methods=['POST'])
 def tripRequestPost():
 	formAttributes = {'user','origin_long','origin_lat','origin_window','destination_long',
 										'destination_lat','destination_window','start_time_min','start_time_max',
@@ -48,8 +48,8 @@ def tripRequestPost():
 
 
 
-@app.route("/tripRequest", methods=['GET'])
-@app.route("/tripRequest/<int:tripRequestId>", methods=['GET','PUT'])
+@app.route("/trip_request", methods=['GET'])
+@app.route("/trip_request/<int:tripRequestId>", methods=['GET','PUT'])
 def tripRequestGet(tripRequestId=0):
 	if tripRequestId == 0:
 		return dumpJsonFile('get_tripRequests.json')
