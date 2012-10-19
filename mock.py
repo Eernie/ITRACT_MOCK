@@ -8,10 +8,9 @@ app.debug = True
 
 
 def controleValidAttributes(formAttributes):
-	for attribute in formAttributes
+	for attribute in formAttributes:
 		if not request.args.get(attribute):
-			return False
-	return True
+			return abort(400)
 
 
 @app.route("/tripOffer", methods=['POST'])
@@ -20,8 +19,7 @@ def tripOfferPost():
 					'origin_window', 'destination_long', 'destination_lat', 'destination_window', 
 					'start_time_min', 'start_time_max', 'end_time_min', 'end_time_max', 'numberOfSeats'}
 	if request.method == 'PUT':
-		if not controleValidAttributes(formAttributes):
-			return abort(400) 
+		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_userById.json')
 
 
@@ -35,8 +33,7 @@ def tripOfferGet(tripOfferId=0):
 										'destination_window','start_time_min','start_time_max','end_time_min','end_time_max',
 										'numberOfSeats'}
 	if request.method == 'PUT':
-		if not controleValidAttributes(formAttributes):
-			return abort(400) 
+		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_tripOfferById.json')
 
 
@@ -47,8 +44,7 @@ def tripRequestPost():
 										'destination_lat','destination_window','start_time_min','start_time_max',
 										'end_time_min','end_time_max','numberOfSeats'}
 	if request.method == 'PUT':
-		if not controleValidAttributes(formAttributes):
-			return abort(400)
+		controleValidAttributes(formAttributes)	 
 	return dumpJsonFIle('get_tripRequestById.json')
 
 
@@ -63,8 +59,7 @@ def tripRequestGet(tripRequestId=0):
 										'destination_window','start_time_min','start_time_max','end_time_min','end_time_max',
 										'numberOfSeats'}
 	if request.method == 'PUT':
-		if not controleValidAttributes(formAttributes):
-			return abort(400)
+		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_tripRequestById.json')
 
 
@@ -72,8 +67,7 @@ def tripRequestGet(tripRequestId=0):
 def matchGet(matchId):
 	formAttributes = {'confirm','rating'}
 	if request.method == 'PUT':
-		if not controleValidAttributes(formAttributes):
-			return abort(400)
+		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_match.json')
 
 
@@ -81,8 +75,7 @@ def matchGet(matchId):
 def userPost():
 	formAttributes = {'name'}
 	if request.method == 'PUT':
-		if not controleValidAttributes(formAttributes):
-			return abort(400)
+		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_userById.json')
 
 
@@ -93,8 +86,7 @@ def userGet(userId=0):
 		return dumpJsonFile('get_users.json')
 	formAttributes = {'name'}
 	if request.method == 'PUT':
-		if not controleValidAttributes(formAttributes):
-			return abort(400)
+		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_userById.json')
 
 
