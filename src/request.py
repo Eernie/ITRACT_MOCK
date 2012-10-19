@@ -4,11 +4,12 @@ import pprint
 import sys
 
 def main():
-	host = ''
+	
 	if len(sys.argv)>1:
-		host = sys.argv[1]
+		requester = httpRequester(sys.argv[1])
+	else:
+		requester = httpRequester()
 		
-	requester = httpRequester(host)
 	quits = {"exit","quit","stop"}
 	
 	while True:

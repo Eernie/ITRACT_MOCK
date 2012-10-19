@@ -4,7 +4,7 @@ import json
 
 class httpRequester:
 
-	def __init__(self, url="localhost:5000"):
+	def __init__(self, url="localhost"):
 		self.url = url
 		self.commands = []
 		self.addCommand('tripOffer','GET','')
