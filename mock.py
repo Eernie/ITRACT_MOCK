@@ -9,7 +9,7 @@ app.debug = True
 
 def controleValidAttributes(formAttributes):
 	for attribute in formAttributes:
-		if not request.args.get(attribute):
+		if not request.form[attribute]:
 			return abort(400)
 
 
@@ -43,7 +43,7 @@ def tripRequestPost():
 										'end_time_min','end_time_max','numberOfSeats'}
 	if request.method == 'PUT':
 		controleValidAttributes(formAttributes)	 
-	return dumpJsonFIle('get_tripRequestById.json')
+	return dumpJsonFile('get_tripRequestById.json')
 
 
 

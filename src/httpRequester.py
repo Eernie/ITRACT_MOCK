@@ -31,7 +31,7 @@ class httpRequester:
 			command = self.commands[index]
 
 			opener = urllib2.build_opener(urllib2.HTTPHandler)
-			request = urllib2.Request('http://'+self.url+'/'+command['name']+command['getvars'], data='test=test')
+			request = urllib2.Request('http://'+self.url+'/'+command['name']+command['getvars'], data= command['data'])
 			request.get_method = lambda: command['method']
 			url = opener.open(request)
 			answer = json.load(url)
