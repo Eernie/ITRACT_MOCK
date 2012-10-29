@@ -48,4 +48,5 @@ class httpRequester:
 		for command in self.commands:
 			possibleCommands += str(command['index'])+".\t"+command['method']+"\t"+command['name']+command['getvars']+"\n"
 
+		possibleCommands += "Command: "
 		return possibleCommands
