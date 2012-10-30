@@ -22,10 +22,11 @@ def crossdomain(origin=None, methods=None, headers=None,
 
     def get_methods():
         if methods is not None:
-            return methods
+        	return methods
 
         options_resp = current_app.make_default_options_response()
-        return options_resp.headers['allow']
+        options = ', '.join({options_resp.headers['allow'], 'OPTIONS'})
+        return options
 
     def decorator(f):
         def wrapped_function(*args, **kwargs):
@@ -40,6 +41,7 @@ def crossdomain(origin=None, methods=None, headers=None,
 
             h['Access-Control-Allow-Origin'] = origin
             h['Access-Control-Allow-Methods'] = get_methods()
+            h['Access-Control-Allow-Headers'] = 'Content-Type'
             h['Access-Control-Max-Age'] = str(max_age)
             if headers is not None:
                 h['Access-Control-Allow-Headers'] = headers
@@ -62,7 +64,7 @@ def tripOfferPost():
 	formAttributes = {'user','origin_long', 'origin_lat', 
 					'origin_window', 'destination_long', 'destination_lat', 'destination_window', 
 					'start_time_min', 'start_time_max', 'end_time_min', 'end_time_max', 'numberOfSeats'}
-	if request.method == 'PUT':
+	if request.method == 'POST':
 		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_userById.json')
 
@@ -75,20 +77,21 @@ def tripOfferGet(tripOfferId=0):
 		return dumpJsonFile('get_tripOffers.json')
 
 	formAttributes = {'destination_long','destination_lat','numberOfSeats'}
-	if request.method == 'PUT':
+	if request.method == 'GET':
 		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_tripOfferById.json')
 
 
 
-@app.route("/trip_request", methods=['POST'])
+@app.route("/trip_request", methods=['POST', 'OPTIONS'])
 @crossdomain(origin='*')
 def tripRequestPost():
 	formAttributes = {'user','origin_long','origin_lat','origin_window','destination_long',
 										'destination_lat','destination_window','start_time_min','start_time_max',
 										'end_time_min','end_time_max','numberOfSeats'}
-	if request.method == 'PUT':
-		controleValidAttributes(formAttributes)	 
+	pprint.pprint(request.data)
+	# if request.method == 'GET':
+	# 	controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_tripRequestById.json')
 
 
