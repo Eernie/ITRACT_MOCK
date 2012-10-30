@@ -2,19 +2,19 @@
 	"tripRequest" : 
 	{
 		"request_id" : 1,
-		"request_user" : "<int::user_id>",
-		"request_origin_long" : "<double::longitude>",
-		"request_origin_lat" : "<double::latitude>",
-		"request_origin_window": "<int::window_in_meters>",
-		"request_destination_long" : "<double::longitude>",
-		"request_destination_lat" : "<double::latitude>",
-		"request_destination_window": "<int::window_in_meters>",
-		"request_start_time_min" : "<long::unix_time>",
-		"request_start_time_max" : "<long::unix_time>",
-		"request_end_time_min" : "<long::unix_time>",
-		"request_end_time_max" : "<long::unix_time>",
-		"request_numberOfSeats" : "<int::number_of_seats>",
-		"request_state" : "<string::state>"	
+		"request_user" : 1,
+		"request_origin_long" : 3.13423498297384,
+		"request_origin_lat" : -1.41234235325,
+		"request_origin_window": 500,
+		"request_destination_long" : 3.13423498297384,
+		"request_destination_lat" : -1.41234235325,
+		"request_destination_window": 500,
+		"request_start_time_min" : 127651654,
+		"request_start_time_max" : 127651700,
+		"request_end_time_min" : 127651800,
+		"request_end_time_max" : 127651850,
+		"request_numberOfSeats" : 4,
+		"request_state" : "UNSURE"	
 	},
 	
 	"tripMatches" : [
