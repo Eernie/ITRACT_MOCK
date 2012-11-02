@@ -37,7 +37,7 @@
 			"offerEndTimeMin" : "",
 			"offerEndTimeMax" : "",
 			"offerNumberOfSeats" : "<int::number_of_seats>",
-			"offerState" : "<string::state>",
+			"offerState" : "UNSURE",
 			"matchState" : "UNSURE"
 		},
 		{
@@ -57,7 +57,7 @@
 			"offerEndTimeMin" : 1351871627,
 			"offerEndTimeMax" : "",
 			"offerNumberOfSeats" : "<int::number_of_seats>",
-			"offerState" : "<string::state>",
+			"offerState" : "UNSURE",
 			"matchState" : "UNSURE"
 		}
 	]

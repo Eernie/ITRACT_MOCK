@@ -1,5 +1,5 @@
 {
-	"requestId" : "<int::trip_requestId>",
+	"requestId" : "1",
 	"requestUser" : "<int::userId>",
 	"requestOriginLong" : "<double::longitude>",
 	"requestOriginLat" : "<double::latitude>",
