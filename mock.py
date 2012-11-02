@@ -114,14 +114,16 @@ def tripRequestGet(tripRequestId=0):
 def matchByRequestGet(requestId):
 	formAttributes = {'confirm','rating'}
 	if request.method == 'PUT':
+		pprint.pprint(request.data)
 		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_matchesByRequestById.json')
 
-@app.route("/trip_match/<int:matchId>", methods=['GET','PUT'])
+@app.route("/trip_match/<int:matchId>", methods=['GET','PUT','OPTIONS'])
 @crossdomain(origin='*')
 def tripMatchGet(matchId):
-	formAttributes = {'confirm','rating'}
+	formAttributes = {}
 	if request.method == 'PUT':
+		pprint.pprint(request.data)
 		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_tripMatchById.json')
 
