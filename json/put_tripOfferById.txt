@@ -1,0 +1,25 @@
+Data format standard: http://en.wikipedia.org/wiki/Percent-encoding#The_application.2Fx-www-form-urlencoded_type
+
+Possible parameters for the http PUT body:
+
+- origin_long=<longitude>
+- origin_lat=<latitude>
+- origin_window=<window_in_meters>
+- destination_long=<longitude>
+- destination_lat=<latitude>
+- destination_window=<window_in_meters>
+- start_time_min=<unix_time>
+- start_time_max=<unix_time>
+- end_time_min=<unix_time>
+- end_time_max=<unix_time>
+- numberOfSeats=<number_of_seats>
+
+Example:
+
+To change the trip offer destination and numberOfSeats of tripOffer 1, the PUT request body sent to https://<server>/tripOffer/1
+
+destination_long=-70&destination_lat=38&numberOfSeats=4
+
+Is URLEncoded to: 
+
+destination_long%3D-70%26destination_lat%3D38%26numberOfSeats%3D4

@@ -1,4 +1,16 @@
 {
-	"user_id" : 1,
-	"user_name" : "<string::user_name>"
+	"userId" : "<int::userId>",
+	"userFirstName" : "<string::firstName>",
+	"userLastName" : "<string::lastName>",
+	"userEmail" : "<string::email>",
+	"userAddress" : "<string::address>",
+	"userCity" : "<string::city>",
+	"userCountry" : "<string::country>",
+	"userTelephoneNr" : "<string::telephoneNumber>",
+	"userDateOfBirth" : "<string::YYYY/MM/DD>",
+	"userAge" : "<int::age>",
+	"userGender" : "<string::M/F>",
+	"userPositiveRating" : "<int::postitiveRatings>",
+	"userNegativeRating" : "<int::negativeRatings>",
+	"userProfilePic" : "<string::imageUrl>"
 }

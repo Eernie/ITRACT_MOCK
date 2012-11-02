@@ -1,0 +1,17 @@
+DISCLAIMER: THIS IS A DRAFT! More functionality/fields will be added in the course of the project
+
+Data format standard: http://en.wikipedia.org/wiki/Percent-encoding#The_application.2Fx-www-form-urlencoded_type
+
+Format for the http POST body (without newlines):
+
+name=<string>
+
+Example:
+
+For creating a new user, a POST request is sent to https://<server>/user with the data:
+
+name=John
+
+which is URLEncoded to: 
+
+name%3DJohn

@@ -1,0 +1,26 @@
+Data format standard: http://en.wikipedia.org/wiki/Percent-encoding#The_application.2Fx-www-form-urlencoded_type
+
+Format for the http post body (without newlines) (needs to be URLEncoded before sending & URLDecoded after receiving):
+
+user=<user_id>&
+origin_long=<longitude>&
+origin_lat=<latitude>&
+origin_window=<window_in_meters>&
+destination_long=<longitude>&
+destination_lat=<latitude>&
+destination_window=<window_in_meters>&
+start_time_min=<unix_time>&
+start_time_max=<unix_time>&
+end_time_min=<unix_time>&
+end_time_max=<unix_time>&
+numberOfSeats=<number_of_seats>
+
+Example:
+
+The data: 
+
+user=1&origin_long=-77.037852&origin_lat=38.898556&origin_window=500&destination_long=-78.037852&destination_lat=39.898556&destination_window=500&start_time_min=1350478871&start_time_max=1350478872&end_time_min=1350478873&end_time_max=1350478874&numberOfSeats=1
+
+Is URLEncoded to: 
+
+user%3D1%26origin_long%3D-77.037852%26origin_lat%3D38.898556%26origin_window%3D500%26destination_long%3D-78.037852%26destination_lat%3D39.898556%26destination_window%3D500%26start_time_min%3D1350478871%26start_time_max%3D1350478872%26end_time_min%3D1350478873%26end_time_max%3D1350478874%26numberOfSeats%3D1

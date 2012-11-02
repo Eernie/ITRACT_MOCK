@@ -1,0 +1,22 @@
+Data format standard: http://en.wikipedia.org/wiki/Percent-encoding#The_application.2Fx-www-form-urlencoded_type
+
+For the http put body (without newlines) (needs to be URLEncoded before sending & URLDecoded after receiving) the possible parameters are:
+
+- confirm=<true/false>
+- rating=<int>
+
+Example:
+
+1) To confirm match 1, a put request to https://<server>/match/1 is sent with the body
+confirm=true
+Which needs to be URLEncoded to: 
+confirm%3Dtrue
+
+-----------------------------------
+
+2) To rate match 1, a put request to https://<server>/match/1 is sent with the body
+rating=8
+Which needs to be URLEncoded to: 
+rating%3D8
+
+-----------------------------------

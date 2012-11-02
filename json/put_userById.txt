@@ -1,0 +1,16 @@
+DISCLAIMER: THIS IS A DRAFT! More functionality/fields will be added in the course of the project
+
+Data format standard: http://en.wikipedia.org/wiki/Percent-encoding#The_application.2Fx-www-form-urlencoded_type
+
+Possible parameters for the http PUT body:
+
+- name=<string>
+Example:
+
+To change the user with id 1 his name to the PUT request body sent to https://<server>/user/1
+
+name=John
+
+Is URLEncoded to: 
+
+name%3DJohn

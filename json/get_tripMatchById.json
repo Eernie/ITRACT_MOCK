@@ -1,0 +1,39 @@
+{	
+	"tripRequest" : 
+	{
+		"requestId" : "<int::trip_requestId>",
+		"requestUser" : "<int::userId>",
+		"requestOriginLong" : "<double::longitude>",
+		"requestOriginLat" : "<double::latitude>",
+		"requestOriginWindow": "<int::window>",
+		"requestDestinationLong" : "<double::longitude>",
+		"requestDestinationLat" : "<double::latitude>",
+		"requestDestinationWindow": "<int::window>",
+		"requestStartTimeMin" : "<long::unix_time>",
+		"requestStartTimeMax" : "<long::unix_time>",
+		"requestEndTimeMin" : "<long::unix_time>",
+		"requestEndTimeMax" : "<long::unix_time>",
+		"requestNumberOfSeats" : "<int::number_of_seats>",
+		"requestState" : "<string::state>"
+	},
+
+	"tripOffer" : 
+	{
+		"offerId" : "<int::trip_offerId>",
+		"offerUser" : "<int::userId>",
+		"offerOriginLong" : "<double::longitude>",
+		"offerOriginLat" : "<double::latitude>",
+		"offerOriginWindow": "<int::window_in_meters>",
+		"offerDestinationLong" : "<double::longitude>",
+		"offerDestinationLat" : "<double::latitude>",
+		"offerDestinationWindow": "<int::window_in_meters>",
+		"offerStartTimeMin" : "<long::unix_time>",
+		"offerStartTimeMax" : "<long::unix_time>",
+		"offerEndTimeMin" : "<long::unix_time>",
+		"offerEndTimeMax" : "<long::unix_time>",
+		"offerNumberOfSeats" : "<int::number_of_seats>",
+		"offerState" : "<string::state>"
+	},
+
+	"matchState" : "<string::State>"
+}
