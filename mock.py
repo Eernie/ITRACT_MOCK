@@ -58,7 +58,7 @@ def controleValidAttributes(formAttributes):
 			return abort(400)
 
 
-@app.route("/trip_offer", methods=['POST'])
+@app.route("/trip_offer", methods=['POST', 'OPTIONS'])
 @crossdomain(origin='*')
 def tripOfferPost():
 	formAttributes = {'user','origin_long', 'origin_lat', 
