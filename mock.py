@@ -64,8 +64,8 @@ def tripOfferPost():
 	formAttributes = {'user','origin_long', 'origin_lat', 
 					'origin_window', 'destination_long', 'destination_lat', 'destination_window', 
 					'start_time_min', 'start_time_max', 'end_time_min', 'end_time_max', 'numberOfSeats'}
-	if request.method == 'POST':
-		controleValidAttributes(formAttributes)	 
+	#if request.method == 'POST':
+	#	controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_userById.json')
 
 
