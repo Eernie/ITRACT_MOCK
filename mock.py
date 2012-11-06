@@ -148,6 +148,11 @@ def userGet(userId=0):
 		controleValidAttributes(formAttributes)	 
 	return dumpJsonFile('get_userById.json')
 
+@app.route("/user/<int:userId>/trip_matches", methods=['GET'])
+@crossdomain(origin='*')
+def userMatchesGet(userId):
+    return dumpJsonFile('get_userTripMatches.json')
+
 
 
 @app.errorhandler(404)
